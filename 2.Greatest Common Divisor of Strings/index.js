@@ -23,4 +23,26 @@ const gcdOfStrings = (str1, str2) => {
     return str1.slice(0, gcd(str1.length, str2.length));
 };
 
-gcdOfStrings('ABABAB', 'ABAB');
+console.log(gcdOfStrings('ABABAB', 'ABAB'));
+
+// шпора  по алгоритму Евклида
+//большее число делим на меньшее.
+//если делится без остатка, то меньшее число и есть НОД (следует выйти из цикла).
+//если есть остаток, то большее число заменяем на остаток от деления.
+
+const gcdOfStrings2 = (str1, str2) => {
+    if (str1 + str2 !== str2 + str1) return '';
+
+    let a = str1.length;
+    let b = str2.length;
+
+    while (b !== 0) {
+        const rest = a % b;
+        a = b;
+        b = rest;
+    }
+
+    return str1.slice(0, a);
+};
+
+console.log(gcdOfStrings2('ABABAB', 'ABAB'));
