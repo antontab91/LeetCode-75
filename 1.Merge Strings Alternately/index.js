@@ -28,16 +28,16 @@
 // merged: a p b q c   d
 
 function mergeAlternately(word1, word2) {
-  const biggestWord = word1.length > word2.length ? word1 : word2;
+    const biggestWord = word1.length > word2.length ? word1 : word2;
 
-  const result = [...biggestWord].reduce((acc, _, i) => {
-    if (word1[i]) acc += word1[i];
-    if (word2[i]) acc += word2[i];
-    return acc;
-  }, "");
+    const result = [...biggestWord].reduce((acc, _, i) => {
+        if (word1[i]) acc += word1[i];
+        if (word2[i]) acc += word2[i];
+        return acc;
+    }, '');
 
-  console.log(result);
-  return result;
+    console.log(result);
+    return result;
 }
 
-mergeAlternately("ab", "pqrs");
+mergeAlternately('ab', 'pqrs');
